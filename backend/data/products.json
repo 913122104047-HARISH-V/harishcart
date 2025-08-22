@@ -1,0 +1,140 @@
+[
+{
+    "name": "Wireless Headphones",
+    "price": 99.99,
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "ratings": "4.5",
+    "images": [
+      { "image": "https://example.com/images/headphones1.jpg" },
+      { "image": "https://example.com/images/headphones2.jpg" }
+    ],
+    "category": "HeadPhones",
+    "seller": "TechWorld",
+    "stock": 15,
+    "numOfReviews": 3,
+    "reviews": [
+      {
+        "name": "John Doe",
+        "rating": "5",
+        "comment": "Excellent sound quality!"
+      },
+      {
+        "name": "Jane Smith",
+        "rating": "4",
+        "comment": "Comfortable but slightly overpriced."
+      },
+      {
+        "name": "Bob Lee",
+        "rating": "4.5",
+        "comment": "Great battery life and sound clarity."
+      }
+    ],
+    "createdAt": "2024-12-23T10:00:00.000Z"
+  },
+  {
+    "name": "Gaming Laptop",
+    "price": 1499.99,
+    "description": "High-performance gaming laptop with 16GB RAM and RTX 3060.",
+    "ratings": "4.8",
+    "images": [
+      { "image": "https://example.com/images/laptop1.jpg" },
+      { "image": "https://example.com/images/laptop2.jpg" }
+    ],
+    "category": "Laptops",
+    "seller": "GamingGear",
+    "stock": 10,
+    "numOfReviews": 5,
+    "reviews": [
+      {
+        "name": "Alice Johnson",
+        "rating": "5",
+        "comment": "Superb performance for gaming!"
+      },
+      {
+        "name": "Mike Tyson",
+        "rating": "4.5",
+        "comment": "Great laptop but gets hot under heavy load."
+      }
+    ],
+    "createdAt": "2024-12-22T14:00:00.000Z"
+  },
+  {
+    "name": "Smartphone Pro Max",
+    "price": 999.99,
+    "description": "Latest smartphone with cutting-edge features and an advanced camera.",
+    "ratings": "4.7",
+    "images": [
+      { "image": "https://example.com/images/phone1.jpg" },
+      { "image": "https://example.com/images/phone2.jpg" }
+    ],
+    "category": "Mobile Phones",
+    "seller": "SmartShop",
+    "stock": 25,
+    "numOfReviews": 8,
+    "reviews": [
+      {
+        "name": "Chris Brown",
+        "rating": "5",
+        "comment": "Amazing camera and battery life!"
+      },
+      {
+        "name": "Sarah Parker",
+        "rating": "4.5",
+        "comment": "Sleek design but a bit expensive."
+      }
+    ],
+    "createdAt": "2024-12-21T18:00:00.000Z"
+  },
+  {
+    "name": "The Art of Coding",
+    "price": 29.99,
+    "description": "Comprehensive guide to mastering modern programming languages.",
+    "ratings": "4.9",
+    "images": [
+      { "image": "https://example.com/images/book1.jpg" }
+    ],
+    "category": "Books",
+    "seller": "BookBarn",
+    "stock": 50,
+    "numOfReviews": 15,
+    "reviews": [
+      {
+        "name": "Emma Wilson",
+        "rating": "5",
+        "comment": "Highly recommended for developers!"
+      },
+      {
+        "name": "Liam Davis",
+        "rating": "4.8",
+        "comment": "Well-written and easy to understand."
+      }
+    ],
+    "createdAt": "2024-12-20T12:00:00.000Z"
+  },
+  {
+    "name": "Professional Soccer Ball",
+    "price": 49.99,
+    "description": "Durable and high-quality soccer ball for professional matches.",
+    "ratings": "4.6",
+    "images": [
+      { "image": "https://example.com/images/soccer1.jpg" }
+    ],
+    "category": "Sports",
+    "seller": "SportyGoods",
+    "stock": 30,
+    "numOfReviews": 10,
+    "reviews": [
+      {
+        "name": "Jack Taylor",
+        "rating": "5",
+        "comment": "Perfect for matches and training!"
+      },
+      {
+        "name": "Olivia Harris",
+        "rating": "4.5",
+        "comment": "Great quality but slightly heavy."
+      }
+    ],
+    "createdAt": "2024-12-19T09:00:00.000Z"
+  }  
+]

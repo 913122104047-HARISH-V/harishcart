@@ -1,0 +1,33 @@
+{
+  "name": "proj",
+  "version": "1.0.0",
+  "description": "ecommerce using MERN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js",
+    "dev": "set NODE_ENV=development&&nodemon backend/server.js",
+    "prod": "set NODE_ENV=production&&nodemon backend/server.js",
+    "seeder": "node backend/utils/seeder.js"
+  },
+  "author": "HARISH V",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.7.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.2",
+    "nodemailer": "^6.9.16",
+    "razorpay": "^2.9.6",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

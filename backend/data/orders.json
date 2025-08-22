@@ -1,0 +1,121 @@
+[{
+    "shippingInfo": {
+      "address": "123 Main Street",
+      "country": "USA",
+      "city": "New York",
+      "phoneNo": "1234567890",
+      "postalCode": "10001"
+    },
+    "user": "64a1b23c4d56e78f90a12b34",
+    "orderItems": {
+      "name": "Wireless Headphones",
+      "quantity": 2,
+      "image": "https://example.com/image1.jpg",
+      "price": 150.00,
+      "product": "64a1b23c4d56e78f90a12b35"
+    },
+    "itemsPrice": 300.00,
+    "taxPrice": 30.00,
+    "shippingPrice": 10.00,
+    "totalPrice": 340.00,
+    "paidAt": "2024-12-01T10:30:00.000Z",
+    "orderStatus": "Paid",
+    "createdAt": "2024-12-01T10:00:00.000Z"
+},
+{
+    "shippingInfo": {
+      "address": "456 Elm Street",
+      "country": "Canada",
+      "city": "Toronto",
+      "phoneNo": "9876543210",
+      "postalCode": "M4B 1B4"
+    },
+    "user": "64b2c34d5e67f89g01a23b45",
+    "orderItems": {
+      "name": "Smartphone",
+      "quantity": 1,
+      "image": "https://example.com/image2.jpg",
+      "price": 700.00,
+      "product": "64b2c34d5e67f89g01a23b46"
+    },
+    "itemsPrice": 700.00,
+    "taxPrice": 70.00,
+    "shippingPrice": 20.00,
+    "totalPrice": 790.00,
+    "orderStatus": "Processing",
+    "createdAt": "2024-12-02T12:00:00.000Z"
+  },
+  {
+    "shippingInfo": {
+      "address": "789 Pine Avenue",
+      "country": "UK",
+      "city": "London",
+      "phoneNo": "1122334455",
+      "postalCode": "SW1A 1AA"
+    },
+    "user": "64c3d45e6f78g90h12a34b56",
+    "orderItems": {
+      "name": "Laptop",
+      "quantity": 1,
+      "image": "https://example.com/image3.jpg",
+      "price": 1200.00,
+      "product": "64c3d45e6f78g90h12a34b57"
+    },
+    "itemsPrice": 1200.00,
+    "taxPrice": 120.00,
+    "shippingPrice": 30.00,
+    "totalPrice": 1350.00,
+    "paidAt": "2024-11-28T09:00:00.000Z",
+    "deliveredAt": "2024-12-01T15:00:00.000Z",
+    "orderStatus": "Delivered",
+    "createdAt": "2024-11-28T08:30:00.000Z"
+  },
+  {
+    "shippingInfo": {
+      "address": "101 Maple Lane",
+      "country": "Australia",
+      "city": "Sydney",
+      "phoneNo": "5566778899",
+      "postalCode": "2000"
+    },
+    "user": "64d4e56f7g89h01i23a45b67",
+    "orderItems": {
+      "name": "Tablet",
+      "quantity": 3,
+      "image": "https://example.com/image4.jpg",
+      "price": 250.00,
+      "product": "64d4e56f7g89h01i23a45b68"
+    },
+    "itemsPrice": 750.00,
+    "taxPrice": 75.00,
+    "shippingPrice": 25.00,
+    "totalPrice": 850.00,
+    "orderStatus": "Canceled",
+    "createdAt": "2024-11-25T14:00:00.000Z"
+  },
+  {
+    "shippingInfo": {
+      "address": "202 Birch Road",
+      "country": "India",
+      "city": "Mumbai",
+      "phoneNo": "9988776655",
+      "postalCode": "400001"
+    },
+    "user": "64e5f67g8h90i12j34a56b78",
+    "orderItems": {
+      "name": "Gaming Console",
+      "quantity": 2,
+      "image": "https://example.com/image5.jpg",
+      "price": 500.00,
+      "product": "64e5f67g8h90i12j34a56b79"
+    },
+    "itemsPrice": 1000.00,
+    "taxPrice": 100.00,
+    "shippingPrice": 50.00,
+    "totalPrice": 1150.00,
+    "paidAt": "2024-12-03T16:00:00.000Z",
+    "orderStatus": "Shipped",
+    "createdAt": "2024-12-03T15:30:00.000Z"
+  }
+       
+]
