@@ -22,7 +22,10 @@ const Login = () => {
 // then after successful login, user should be redirected back to /myprofile.
 // Otherwise (if there is no redirect param), user should be redirected to home ("/").
 //const redirect = queryParams.get("redirect") || "/";
-const redirect = location.search?'/'+location.search.split('=')[1]:'/'; 
+//const redirect = location.search?'/'+location.search.split('=')[1]:'/'; 
+// Extract redirect from query param safely
+const queryParams = new URLSearchParams(location.search);
+const redirect = queryParams.get("redirect") || "/";
 
 
   const submitHandler = (e) => {
