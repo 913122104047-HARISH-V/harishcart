@@ -187,8 +187,9 @@ export default function Payment() {
     // 🚀 Fake payment success
     toast.success("Payment Success!");
 
-    dispatch(orderCompleted()); // clear cart + localStorage
-    dispatch(createOrder(order)); // save order to backend
+    dispatch(createOrder(order));   // save order to backend first
+    dispatch(orderCompleted());     // then clear cart + localStorage
+
 
     navigate("/order/success"); // redirect to success page
   };
