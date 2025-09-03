@@ -4,7 +4,7 @@ export default function OrderSuccess() {
         <div className="w-full max-w-md mt-10 text-center">
           <img
             className="my-8 mx-auto w-48 h-48 object-contain"
-            src="/images/success.png"
+            src="https://thumbs.dreamstime.com/b/confirmation-approval-order-operation-payment-successful-completion-girl-confirms-business-success-man-hand-shows-class-239104068.jpg"
             alt="Order Success"
           />
   
