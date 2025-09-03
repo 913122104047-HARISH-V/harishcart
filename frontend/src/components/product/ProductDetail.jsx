@@ -145,9 +145,13 @@ export default function ProductDetail() {
 
               <p>
                 Status:{" "}
-                <span className={`${product.stock > 0 ? 'text-green-600' : 'text-red-600'} font-semibold`}>
-                  {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
+                <span
+                  className={`${product.stock > 0 ? "text-green-600" : "text-red-600"
+                    } font-semibold`}
+                >
+                  {product.stock > 0 ? "In Stock" : "Out of Stock"}
                 </span>
+                {" "}({product.stock} available stock)
               </p>
 
               <div>
