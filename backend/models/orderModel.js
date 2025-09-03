@@ -15,6 +15,10 @@ const orderSchema= new mongoose.Schema({
     taxPrice : { type : Number, required : true,default : 0.0},
     shippingPrice : { type : Number, required : true,default : 0.0},
     totalPrice : { type : Number, required : true,default : 0.0},
+    paymentInfo: {
+    id: { type: String },
+    status: { type: String, default: "Not paid" },
+  },
     paidAt:{ type : Date}, deliveredAt:{type:Date},
     orderStatus: { type : String, required : true,default:'Processing'},
     createdAt:{type:Date,default:Date.now}
