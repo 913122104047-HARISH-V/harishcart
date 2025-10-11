@@ -18,11 +18,7 @@ export default function ForgotPassword() {
     useEffect(() => {
         if (message) {
             toast(message, {
-<<<<<<< HEAD
-                type: 'success',
-=======
                 type: 'success'
->>>>>>> 257ed37ae872f0e4815fbf86fbaa8ea7fd070423
             })
             setEmail("");
             return;
