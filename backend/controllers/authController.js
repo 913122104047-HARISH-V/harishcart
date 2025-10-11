@@ -95,7 +95,7 @@ exports.forgotPassword = catchAsyncError( async(req,res,next)=>{  // user forgot
     const message = `your password reset url is as follows \n\n${resetUrl}\n\n If you not have not requested this email, then ignore it.`;
     
     try{   // for sent reset url and msg to that user email id 
-        sendEmail({email : user.email, subject : 'Harishcart password Recovery', message })
+        await sendEmail({email : user.email, subject : 'Harishcart password Recovery', message })
         res.status(200).json({ success: true, message : `Email sent to ${user.email}`})
     }
     catch(error){

@@ -149,7 +149,6 @@ export const forgotPassword = (formData) => async (dispatch) => {
     } catch (error) {
         dispatch(forgotPasswordFail(error.response.data.message))
     }
-
 }
 
 export const resetPassword = (formData, token) => async (dispatch) => {
