@@ -10,7 +10,7 @@ const sendEmail = async options =>{   // options object contain user email id ,m
       };
     const transporter= nodemailer.createTransport(transport);
     const message={
-        from :`${process.env.SMTP_FROM_NAME}<${process.env.SMTP_FROM_EMAIL}`,
+        from: `"HarishCart Support" <${process.env.EMAIL_USER}>`,
         to : options.email,
         subject : options.subject,
         text : options.message
