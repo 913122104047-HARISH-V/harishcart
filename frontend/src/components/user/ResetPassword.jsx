@@ -25,14 +25,12 @@ export default function ResetPassword() {
     if (isAuthenticated) {
       toast("Password Reset Success!", {
         type: "success",
-        position: toast.POSITION.BOTTOM_CENTER,
       });
       navigate("/");
       return;
     }
     if (error) {
       toast(error, {
-        position: toast.POSITION.BOTTOM_CENTER,
         type: "error",
         onOpen: () => {
           dispatch(clearAuthError);

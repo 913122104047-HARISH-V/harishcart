@@ -65,7 +65,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/password/forgot" element={<ForgotPassword />} />
-          <Route path="/password/reset/:token" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
+          <Route path="/password/reset/:token" element={<ResetPassword />} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/shipping' element={<ProtectedRoute><Shipping/></ProtectedRoute> } />
           <Route path='/order/confirm' element={<ProtectedRoute><ConfirmOrder/></ProtectedRoute> } />
