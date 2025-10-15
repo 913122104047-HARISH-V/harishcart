@@ -80,6 +80,16 @@ exports.loginUser = catchAsyncError( async(req,res,next) => { //this method user
     res.cookie('token',null,{ expires : new Date(Date.now()),httpOnly : true})
         .status(200).json({ success: true, message:'Loggedout'})
  }
+exports.logoutUser = (req, res,user) => {
+    res.cookie('token', null, { 
+        expires: new Date(Date.now()), 
+        httpOnly: true,
+        secure: true,
+        sameSite: 'Strict',
+        path: '/'
+    });
+    res.status(200).json({ success: true, message: 'Logged out' });
+};
 
  // forgot password -/api/v1/password/forgot
 exports.forgotPassword = catchAsyncError( async(req,res,next)=>{  // user forgot password , then use their email to their details
