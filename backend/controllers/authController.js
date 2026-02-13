@@ -5,6 +5,7 @@ const ErrorHandler = require("../utils/errorHandler");
 const sendToken = require('../utils/jwt')
 const crypto=require('crypto')
 const cloudinary = require("../utils/cloudinary"); // import Cloudinary config
+const getCookieOptions = require("../utils/cookieOptions");
 //register user details - api/v1/register
 // login user details - api/v1/login
 // logout - /api/v1/logout
@@ -76,19 +77,17 @@ exports.loginUser = catchAsyncError( async(req,res,next) => { //this method user
  });
 
 // logout - /api/v1/logout
- exports.logoutUser = (req,res,user) =>{      // for user logout we simply set token to null in the cookie 
-    res.cookie('token',null,{ expires : new Date(Date.now()),httpOnly : true})
-        .status(200).json({ success: true, message:'Loggedout'})
- }
-exports.logoutUser = (req, res,user) => {
-    res.cookie('token', null, { 
-        expires: new Date(Date.now()), 
-        httpOnly: true,
-        secure: true,
-        sameSite: 'Strict',
-        path: '/'
-    });
-    res.status(200).json({ success: true, message: 'Logged out' });
+exports.logoutUser = (req, res) => {
+  res.cookie("token", null, {   //for user logout we simply set token to null in the cookie 
+    ...getCookieOptions(),
+    expires: new Date(Date.now()),
+    path: "/",
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged out",
+  });
 };
 
  // forgot password -/api/v1/password/forgot

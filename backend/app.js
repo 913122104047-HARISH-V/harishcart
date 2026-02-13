@@ -9,8 +9,6 @@ const path = require('path'); // absolute path
 //to use the env variables from config file to node.js 
 dotenv.config({path:path.join(__dirname,"config/config.env")}); // we use absolute path only , not direct path, because the node run outside of our application.
 
-
-
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
@@ -18,6 +16,9 @@ app.use(cors({
     origin: 'https://harishcart.vercel.app', // frontend URL
     credentials: true
   }));
+  
+  //'https://harishcart.vercel.app',
+  //'http://localhost:5173'
 
 app.use(express.json()); // for accecpting json data from requests
 app.use(cookieParser());
