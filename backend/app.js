@@ -1,11 +1,10 @@
+const dotenv=require('dotenv')
 const express= require('express');
 const cors = require('cors');
 const app=express();
 const errorMiddeware=require('./middleware/error');
 const cookieParser= require('cookie-parser');
-const dotenv=require('dotenv')
 const path = require('path'); // absolute path 
-
 //to use the env variables from config file to node.js 
 dotenv.config({path:path.join(__dirname,"config/config.env")}); // we use absolute path only , not direct path, because the node run outside of our application.
 

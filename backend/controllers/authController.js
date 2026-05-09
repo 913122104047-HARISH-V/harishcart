@@ -6,6 +6,7 @@ const sendToken = require('../utils/jwt')
 const crypto=require('crypto')
 const cloudinary = require("../utils/cloudinary"); // import Cloudinary config
 const getCookieOptions = require("../utils/cookieOptions");
+const validatePassword = require("../utils/passwordValidator");
 //register user details - api/v1/register
 // login user details - api/v1/login
 // logout - /api/v1/logout
@@ -33,11 +34,15 @@ exports.registerUser = catchAsyncError( async(req,res,next) => {  //here method 
 });*/
 
 
-
 exports.registerUser = catchAsyncError(async (req, res, next) => {
   const { name, email, password, avatar } = req.body;
-  let avatarUrl;
 
+  const errors = validatePassword(password);
+  if (errors.length > 0) {
+    return next(new ErrorHandler(errors.join(", "), 400));
+  }
+
+  let avatarUrl;
   if (avatar) {
     const uploadResult = await cloudinary.uploader.upload(avatar, {
       folder: "user_avatars",
@@ -55,7 +60,6 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
 
   sendToken(user, 201, res);
 });
-
 
 
 
@@ -96,8 +100,7 @@ exports.forgotPassword = catchAsyncError( async(req,res,next)=>{  // user forgot
     if(!user){
         return next(new ErrorHandler('User not found with this email',404));
     }
-    const resetToken =user.getResetToken();  // we generate new token and expire time for reset operation by using method
-
+    const resetToken =user.getResetToken();  // we generate new token and expire time for reset operation by using method   
     await user.save({validateBeforeSave : false}) // save data of reset token and expire and no validation perform
     //create reset url
     const resetUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
@@ -116,7 +119,6 @@ exports.forgotPassword = catchAsyncError( async(req,res,next)=>{  // user forgot
     }
 })
 
-
 // reset password - /api/v1/password/reset/:token 
 
 // this method is called when user clik the reset url 
@@ -132,6 +134,11 @@ exports.resetPasword = catchAsyncError( async(req,res,next)=>{
   
   if(req.body.password !== req.body.confirmPassword){
     return next(new ErrorHandler('Password does not match'))
+  }
+  
+  const errors = validatePassword(req.body.password);
+  if (errors.length > 0) {
+      return next(new ErrorHandler(errors.join(", "), 400));
   }
 
   user.password = req.body.password;
@@ -151,6 +158,12 @@ exports.changePassword = catchAsyncError(async(req,res,next)=>{
     if(!await user.isValidPassword(req.body.oldPassword)){
         return next(new ErrorHandler('Old password is incorrect',401));
     }
+
+    const errors = validatePassword(req.body.newPassword);
+    if (errors.length > 0) {
+    return next(new ErrorHandler(errors.join(", "), 400));
+    }
+
     // assign new password
     user.password = req.body.newPassword;
     await user.save();

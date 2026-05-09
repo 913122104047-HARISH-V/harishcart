@@ -1,27 +1,42 @@
-const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
+const sgMail = require("@sendgrid/mail");
 
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URL = process.env.REDIRECT_URL;
-const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
-
-const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
-oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-
-const sendEmail = async (options) => {     // options object contain user email id ,msg and subject 
+const sendEmail = async (options) => {
   try {
-    const accessToken = await oAuth2Client.getAccessToken();
+    // Set API Key
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+    // Email message
+    const msg = {
+      to: options.email,
+      from: `"HarishCart Support" <${process.env.EMAIL_USER}>`, // must be verified in SendGrid
+      subject: options.subject,
+      text: options.message,   // plain text
+      html: `<p>${options.message}</p>`, // optional HTML version
+    };
+
+    // Send email
+    const result = await sgMail.send(msg);
+
+    return result;
+
+  } catch (error) {
+    console.error("Email send failed:", error.response?.body || error.message);
+    throw new Error("Email could not be sent");
+  }
+};
+
+module.exports = sendEmail;
+
+
+/*const nodemailer = require('nodemailer');
+
+const sendEmail = async (options) => {
+  try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        type: 'OAuth2',
         user: process.env.EMAIL_USER,
-        clientId: CLIENT_ID,
-        clientSecret: CLIENT_SECRET,
-        refreshToken: REFRESH_TOKEN,
-        accessToken: accessToken.token,
+        pass: process.env.EMAIL_PASS, // Gmail App Password (NOT your real password)
       },
     });
 
@@ -34,6 +49,7 @@ const sendEmail = async (options) => {     // options object contain user email 
 
     const result = await transporter.sendMail(mailOptions);
     return result;
+
   } catch (error) {
     console.error('Email send failed:', error);
     throw new Error('Email could not be sent');
@@ -41,3 +57,4 @@ const sendEmail = async (options) => {     // options object contain user email 
 };
 
 module.exports = sendEmail;
+*/

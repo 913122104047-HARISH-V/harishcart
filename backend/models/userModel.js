@@ -8,9 +8,14 @@ const userSchema= new mongoose.Schema({
     name : { type : String, required : [true,'Please enter name']},
     
     email :{ type : String, required :[true,'Please enter email'] , unique : true,validate : [validator.isEmail,'please enter valid email address']},
-    
-    password : { type : String, required : [true,"Please enter password"],maxlength : [6,'password cannot exceed 6 characters'], select : false}, 
-    
+  
+    password: {
+            type: String,
+            required: [true, "Please enter password"],
+            minlength: [8, "Password must be at least 8 characters"],
+            maxlength: [20, "Password cannot exceed 20 characters"], // increase limit
+            select: false,
+     },
     resetPasswordToken : String,
 
     resetPasswordTokenExpire : Date,
